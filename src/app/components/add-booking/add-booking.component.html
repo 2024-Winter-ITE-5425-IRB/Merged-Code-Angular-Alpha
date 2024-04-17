@@ -1,0 +1,16 @@
+<div class="bookingFormContainer">
+  <form (submit)="onSubmit()">
+    <h1 class="bookingTitle">Enter the following Details to book a Room</h1>
+    <br /><br />
+    RoomID : <input type="text" name="roomId" [(ngModel)]="formData.roomId" placeholder="Enter a Valid RoomID" /><br /><br />
+    UserID : <input type="text" name="userId" [(ngModel)]="formData.userId" placeholder="Enter a valid UserID" /><br /><br />
+    Start Date : <input type="date" name="startDate" [(ngModel)]="formData.startDate" placeholder="Start Date" /><br /><br />
+    End Date : <input type="date" name="endDate" [(ngModel)]="formData.endDate" placeholder="End Date" /><br /><br />
+    NumberOfGuests : <input type="number" name="numberOfGuests" [(ngModel)]="formData.numberOfGuests" placeholder="Number of Guests" /><br /><br />
+    <button type="submit" class="submitButton" [disabled]="!isFormValid()">Submit</button>
+    <p *ngIf="!isFormValid()" class="errorMessage">All fields are required</p>
+  </form>
+  <p>{{ message }}</p>
+
+  <button (click)="close()" class="submitButton">Close</button>
+</div>

@@ -1,0 +1,33 @@
+.homeTitle {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+.app-container {
+    max-height: 100vh; /* Set maximum height to the height of the viewport */
+    overflow-y: auto; /* Enable vertical scrollbar when content overflows */
+    /*background-image: url('../assets/backgound.jpg');*/
+    background-size: cover; /* Cover the entire container with the background image */
+    background-position: center;
+}
+
+.background-image {
+    position: absolute; /* Position the background image absolutely */
+    top: 0; /* Adjust top position based on your layout */
+    left: 0;
+    right: 0;
+    bottom: 0; /* Adjust bottom position based on your layout */
+    background-image: url('../assets/backgound.jpg'); /* Set the background image */
+    background-size: cover; /* Cover the entire container with the background image */
+    z-index: -1; /* Ensure the background image is behind other content */
+}
+
+.app-footer {
+    position: absolute; /* Position the footer absolutely */
+    bottom: 0; /* Align the footer to the bottom of the container */
+    width: 100%; /* Make the footer span the full width of its container */
+    margin-bottom: 0; /* Remove any existing bottom margin */
+  }
+

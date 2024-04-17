@@ -1,0 +1,26 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #333;
+    color: white;
+}
+
+.logo img {
+    width: 70px;
+    height: 50px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.roomhive {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px; /* Adjust this value as needed */
+    font-size: 1.5rem; /* Adjust font-size as needed */
+}
+
+.userProfileIcon img {
+    width: 50px;
+}

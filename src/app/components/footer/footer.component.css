@@ -1,0 +1,17 @@
+/* Footer.module.css */
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .footerColumn {
+    flex: 1;
+    text-align: center;
+  }
+  

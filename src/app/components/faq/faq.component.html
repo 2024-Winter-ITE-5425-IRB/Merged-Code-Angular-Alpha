@@ -1,0 +1,28 @@
+<section class="flex">
+    <div class="py-24 flex-1">
+        <h1 class="text-5xl font-semibold">
+            Frequently<br />
+            Asked<br />
+            Questions&nbsp;
+        </h1>
+    </div>
+    <div class="relative flex-1">
+        <img class="rounded-t-lg" src="../../../assets/faq.jpg" alt="room image" />
+    </div>
+</section>
+
+<div class="max-w-4xl mx-auto py-4">
+    <div class="grid grid-cols-1 gap-4">
+        <div class="bg-gray-200 p-4 rounded-lg shadow-md" *ngFor="let faq of faqs">
+            <div class="flex justify-between items-center">
+                <h4 class="text-lg font-semibold">{{ faq.question }}</h4>
+            </div>
+            <div class="bg-gray-100 p-4 rounded-lg mt-4">
+                <p>{{ faq.answer }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

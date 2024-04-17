@@ -1,0 +1,101 @@
+<div class="max-w-5xl mx-auto p-4">
+    <h2 class="font-black text-black text-center text-3xl uppercase mx-auto mb-12">What People Are Saying</h2>
+    <ng-container *ngIf="reviews.length > 0">
+        <div class="flex flex-wrap justify-start gap-4">
+            <div *ngFor="let review of reviews; let i = index" class="w-full sm:w-48 md:w-48 bg-gray-200 rounded-lg p-8 mb-4 flex flex-col">
+                <div class="flex items-center justify-center mb-4">
+                    <p class="font-bold uppercase">{{ review.rating }}</p>
+                    <svg class="text-yellow-500 w-4 h-4 ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" stroke="currentColor">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                    </svg>
+                </div>
+                <p class="text-xl font-light italic text-gray-700">{{ review.comment }}</p>
+            </div>
+        </div>
+    </ng-container>
+</div>
+
+<h1 class="text-2xl mb-4 text-center">Add a review using Reactive Form</h1>
+<div class="flex justify-center items-center">
+    <form [formGroup]="ReviewForm" (ngSubmit)="onSubmit2()" class="mb-8">
+        <div class="mb-4">
+            <label for="cleanliness" class="block">Cleanliness:</label>
+            <input type="number" formControlName="cleanliness" required min="1" max="5"
+                class="border rounded-md py-1 px-2 focus:outline-none focus:ring focus:border-blue-300">
+            @if(ReviewForm.controls.cleanliness.errors?.['required'] && ReviewForm.get('cleanliness')?.touched){
+            <span class="text-red-500">Cleanliness is required</span>
+            }
+            @if(ReviewForm.get('cleanliness')?.touched && (ReviewForm.controls.cleanliness.errors?.['min'] ||
+            ReviewForm.controls.cleanliness.errors?.['max'])){
+            <span class="text-red-500">Rating range is 1-5</span><br>
+            }
+        </div>
+         <div class="mb-4">
+            <label for="location" class="block">Location:</label>
+            <input type="number" formControlName="location" required min="1" max="5"
+                class="border rounded-md py-1 px-2 focus:outline-none focus:ring focus:border-blue-300">
+            @if(ReviewForm.controls.location.errors?.['required'] && ReviewForm.get('location')?.touched){
+                <span class="text-red-500">Location is required</span>
+            }
+            @if(ReviewForm.get('location')?.touched && (ReviewForm.controls.location.errors?.['min'] || ReviewForm.controls.location.errors?.['max'])){
+                <span class="text-red-500">Rating range is 1-5</span><br>
+            }
+        </div>
+        <div class="mb-4">
+            <label for="value" class="block">Value:</label>
+            <input type="number" formControlName="value" required min="1" max="5"
+                class="border rounded-md py-1 px-2 focus:outline-none focus:ring focus:border-blue-300">
+            @if(ReviewForm.controls.value.errors?.['required'] && ReviewForm.get('value')?.touched){
+                <span class="text-red-500">Value is required</span>
+            }
+            @if(ReviewForm.get('value')?.touched && (ReviewForm.controls.value.errors?.['min'] || ReviewForm.controls.value.errors?.['max'])){
+                <span class="text-red-500">Rating range is 1-5</span><br>
+            }
+        </div>
+        <div class="mb-4">
+            <label for="accuracy" class="block">Accuracy:</label>
+            <input type="number" formControlName="accuracy" required min="1" max="5"
+                class="border rounded-md py-1 px-2 focus:outline-none focus:ring focus:border-blue-300">
+            @if(ReviewForm.controls.accuracy.errors?.['required'] && ReviewForm.get('accuracy')?.touched){
+                <span class="text-red-500">Accuracy is required</span>
+            }
+            @if(ReviewForm.get('accuracy')?.touched && (ReviewForm.controls.accuracy.errors?.['min'] || ReviewForm.controls.accuracy.errors?.['max'])){
+                <span class="text-red-500">Rating range is 1-5</span><br>
+            }
+        </div>
+        <div class="mb-4">
+            <label for="communication" class="block">Communication:</label>
+            <input type="number" formControlName="communication" required min="1" max="5"
+                class="border rounded-md py-1 px-2 focus:outline-none focus:ring focus:border-blue-300">
+            @if(ReviewForm.controls.communication.errors?.['required'] && ReviewForm.get('communication')?.touched){
+                <span class="text-red-500">Communication is required</span>
+            }
+            @if(ReviewForm.get('communication')?.touched && (ReviewForm.controls.communication.errors?.['min'] || ReviewForm.controls.communication.errors?.['max'])){
+                <span class="text-red-500">Rating range is 1-5</span><br>
+            }  
+        </div>
+        <div class="mb-4">
+            <label for="checkIn" class="block">CheckIn:</label>
+            <input type="number" formControlName="checkIn" required min="1" max="5"
+                class="border rounded-md py-1 px-2 focus:outline-none focus:ring focus:border-blue-300">
+            @if(ReviewForm.controls.checkIn.errors?.['required'] && ReviewForm.get('checkIn')?.touched){
+                <span class="text-red-500">CheckIn is required</span>
+            }
+            @if(ReviewForm.get('checkIn')?.touched && (ReviewForm.controls.checkIn.errors?.['min'] || ReviewForm.controls.checkIn.errors?.['max'])){
+                <span class="text-red-500">Rating range is 1-5</span><br>
+            }  
+        </div>
+
+        <div class="mb-4">
+            <label for="value" class="block">Comment:</label>
+            <input type="text" formControlName="comment" 
+                class="border rounded-md py-1 px-2 focus:outline-none focus:ring focus:border-blue-300">
+        </div>
+    
+    
+        <input type="submit" value="Add review"
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded disabled:opacity-50"
+            [disabled]="!ReviewForm.valid">
+    </form>
+</div>
+

@@ -1,0 +1,13 @@
+<div class="bookingFormContainer">
+  <form (submit)="handleDelete()">
+    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+    <label>
+      Enter Booking ID:
+      <input type="text" name="bookingId" [(ngModel)]="bookingId" placeholder="Enter a Valid Booking ID" /><br /><br />
+    </label>
+    <button type="submit" class="submitButton" [disabled]="!bookingId.trim()">Delete</button>
+    <p *ngIf="!bookingId.trim()" class="errorMessage">Booking ID required</p>
+  </form>
+
+  <button (click)="close()" class="submitButton">Close</button>
+</div>
